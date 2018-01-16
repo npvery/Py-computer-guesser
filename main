@@ -1,0 +1,28 @@
+import time
+
+print("Let's play a guessing game! Think of a whole number between 1 and 100, and I'll try to guess it.")
+time.sleep(2)
+print("Okay, let's go! Only type 'higher' or 'lower' if I'm wrong. If I'm right, type 'yes'!")
+time.sleep(2)
+feedback = str(input("Is your number 50?"))
+guess = 50
+first = 50
+answers = []
+
+#Initialize
+if feedback == "higher":
+    guess = guess + (first / 2)
+    answers.append(feedback)
+elif feedback == "lower":
+    guess = guess - (first / 2)
+    answers.append(feedback)
+elif feedback == "yes":
+    print ("Got it! Too easy.")
+    break
+
+for i in range(20):
+    if feedback == "higher":
+        answers.append(feedback)
+        if answers[-1] == answers[-2]:
+            guess = guess + (first / 2)
+            
